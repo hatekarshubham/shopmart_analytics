@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: _stg_products
+    description: "Staging model for products, cleaned and ready for transformation."
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product."
+        tests:
+          - not_null
+          - unique
+      # - name: price
+      #   description: "Price for each product."
+      #   tests:
+      #     - price_positive_value
+
+  - name: _stg_customers
+    description: "Staging model for customers, cleaned and ready for transformation."
+    columns:
+      - name: cust_id
+        description: "Unique identifier for each customer."
+        tests:
+          - not_null
+          - unique

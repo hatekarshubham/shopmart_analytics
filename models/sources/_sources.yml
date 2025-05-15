@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: shopmart
+    description: "Raw source data from the e-commerce platform."
+    database: testproject-338418  
+    schema: raw  
+    tables:
+      - name: products
+        description: "Product-level master data with prices, SKUs, and category information."
+        columns:
+          - name: id
+            description: "Primary key of the products."
+            tests:
+              - not_null
+              - unique
+          - name: category
+            description: ""
+      - name: customers
+        description: "Customer information including sign-up date and location."
+        columns:
+          - name: id
+            description: "Primary key of the customers."
+            tests:
+              - not_null
+              - unique
+      

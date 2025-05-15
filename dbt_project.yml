@@ -1,0 +1,19 @@
+name: 'shopmart_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_cloud'  # Match the profile name set up in dbt Cloud
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+docs-paths: ["docs"]
+
+models:
+  shopmart_analytics:
+    +materialized: table
+    staging:
+      +schema: staging
